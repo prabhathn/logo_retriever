@@ -60,7 +60,7 @@ for r in request_list:
     captions.append(r[1])
 
 # Plot matrix of logots
-st.image(image=urls, caption=companies)
+st.image(image=urls, caption=captions)
 
 # Credits and Notes
 st.markdown('Known issues: No error-checking on text entry, no graceful fail for 404, no grayscaled images, no default sizes for images.')
