@@ -34,4 +34,4 @@ st.image(image=urls, caption=companies)
 # Credits and Notes
 st.markdown('Known issues: No error-checking on text entry, no graceful fail for 404, no grayscaled images, no default sizes for images.')
 st.markdown('[Logos provided by Clearbit](https://clearbit.com)')
-st.markdown('Created by [Prabhath Nanisetty](https://www.linked.com/in/prabhathnanisetty). Code at [Github](https://github.com/prabhathn/logo_grabber)')
+st.markdown('Created by [Prabhath Nanisetty](https://www.linkedin.com/in/prabhathnanisetty). Code at [Github](https://github.com/prabhathn/logo_grabber)')
