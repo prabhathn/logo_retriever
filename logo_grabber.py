@@ -43,11 +43,7 @@ st.header("Logo Grabber")
 st.write("Get logos in bulk for sales decks! (Version 1.2)")
 txt = st.text_area('Enter a list of domains or search terms, separated by commas, semicolons, or new lines:', 
                    'snowflake.com,robling.io,procter gamble\nkraftheinz.com;albertsons.com', 
-                   placeholder='''Type a list of 
-                   Company URLs separated by 
-                   commas (e.g. snowflake.com,
-                   robling.io). Do not put www 
-                   in front.''')
+                   placeholder='''Type a list of Company URLs separated by commas, semicolons, or new lines. Do not put www. in front.''')
 
 # Get list of inputs and translate to Logo URLs or autocompletes
 companies = split_input(txt)
