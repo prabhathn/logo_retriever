@@ -32,3 +32,4 @@ urls = create_url_list(companies)
 st.image(image=urls, caption=companies)
 
 st.markdown('[Logos provided by Clearbit](https://clearbit.com)')
+st.markdown('Created by [Prabhath Nanisetty](https://www.linked.com/in/prabhathnanisetty). Code at [Github](https://github.com/prabhathn/logo_grabber)')
