@@ -19,14 +19,14 @@ def create_url_list(domains):
     urls = []
     for d in domains:
         if valid_domain(d):
-            urls.append((prefix + d, d))
+            urls.append((prefix_logo + d, d))
         else:
             # get possible domains
             possible_domains = requests.get(prefix_info + d).json()
             
             # for each domain, append to urls list
             for p in possible_domains:
-                urls.append((prefix + p.logo, d + ' (guess: ' + p.name + ')'))
+                urls.append((p.logo, d + ' (guess: ' + p.name + ')'))
             
     return urls
   
