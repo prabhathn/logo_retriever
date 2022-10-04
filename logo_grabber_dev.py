@@ -40,8 +40,8 @@ def valid_domain(domain):
 # STREAMLIT CODE
 st.header("Logo Grabber")
 st.write("Get logos in bulk for sales decks! (Version 1.2)")
-txt = st.text_area('Enter a list of domains or search terms, separeted by commas / semicolons / new lines:', 
-                   'snowflake.com,robling.io,procter gamble', 
+txt = st.text_area('Enter a list of domains or search terms, separated by commas, semicolons, or new lines:', 
+                   'snowflake.com,robling.io,procter gamble\nkraftheinz.com;albertsons.com', 
                    placeholder='''Type a list of 
                    Company URLs separated by 
                    commas (e.g. snowflake.com,
