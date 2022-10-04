@@ -26,7 +26,7 @@ def create_img_list(domains):
             
             # for each domain, append to urls list
             for p in possible_domains:
-                urls.append((p.logo, d + ' (guess: ' + p.name + ')'))
+                urls.append((p['logo'], d + ' (guess: ' + p['name'] + ')'))
             
     return urls
 
