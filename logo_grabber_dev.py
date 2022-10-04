@@ -7,7 +7,7 @@ import re
 
 def split_input(txt):
     '''Splits the input into a list of domains. No error checking.'''
-    return txt.split(',')
+    return re.split(r'[,;\n]', txt)
 
 def create_img_list(domains):
     '''Converts list of domains into Image URLs that pull from the clearbit API. If a domain is not provided,
@@ -39,9 +39,9 @@ def valid_domain(domain):
 
 # STREAMLIT CODE
 st.header("Logo Grabber")
-st.write("Get logos in bulk for sales decks! (Version 1.1)")
-
-txt = st.text_area('List of URLs', 'snowflake.com,robling.io', 
+st.write("Get logos in bulk for sales decks! (Version 1.2)")
+txt = st.text_area('Enter a list of domains or search terms, separeted by commas / semicolons / new lines:', 
+                   'snowflake.com,robling.io,procter gamble', 
                    placeholder='''Type a list of 
                    Company URLs separated by 
                    commas (e.g. snowflake.com,
@@ -63,6 +63,6 @@ for r in request_list:
 st.image(image=urls, caption=captions)
 
 # Credits and Notes
-st.markdown('Known issues: No error-checking on text entry, no graceful fail for 404, no grayscaled images, no default sizes for images.')
+st.markdown('*Known issues: No error-checking on text entry, no graceful fail for 404, no grayscaled images, no default sizes for images.*')
 st.markdown('[Logos provided by Clearbit](https://clearbit.com)')
 st.markdown('Created by [Prabhath Nanisetty](https://www.linkedin.com/in/prabhathnanisetty). Code at [Github](https://github.com/prabhathn/logo_grabber)')
