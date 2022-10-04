@@ -30,3 +30,5 @@ txt = st.text_area('List of URLs', 'snowflake.com,robling.io',
 companies = split_input(txt)
 urls = create_url_list(companies)
 st.image(image=urls, caption=companies)
+
+st.markdown('[Logos provided by Clearbit](https://clearbit.com)')
