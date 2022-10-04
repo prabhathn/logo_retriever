@@ -9,7 +9,7 @@ def split_input(txt):
     '''Splits the input into a list of domains. No error checking.'''
     return txt.split(',')
 
-def create_url_list(domains):
+def create_img_list(domains):
     '''Converts list of domains into Image URLs that pull from the clearbit API. If a domain is not provided,
     then try and resolve with Clearbit Autocomplete API.'''
      
@@ -29,7 +29,7 @@ def create_url_list(domains):
                 urls.append((p.logo, d + ' (guess: ' + p.name + ')'))
             
     return urls
-  
+
 def valid_domain(domain):
     '''Check string to determine if it's a valid domain'''
     
@@ -37,7 +37,7 @@ def valid_domain(domain):
     return bool(re.match(pattern, domain))
 
 
-# MAIN CODE
+# STREAMLIT CODE
 st.header("Logo Grabber")
 st.write("Get logos in bulk for sales decks! (Version 1.1)")
 
@@ -47,9 +47,19 @@ txt = st.text_area('List of URLs', 'snowflake.com,robling.io',
                    commas (e.g. snowflake.com,
                    robling.io). Do not put www 
                    in front.''')
-    
+
+# Get list of inputs and translate to Logo URLs or autocompletes
 companies = split_input(txt)
-urls = create_url_list(companies)
+request_list = create_img_list(companies)
+
+# Parse (url, caption) tuples
+urls = []
+captions = []
+for r in request_list:
+    urls.append(r[0])
+    captions.append(r[1])
+
+# Plot matrix of logots
 st.image(image=urls, caption=companies)
 
 # Credits and Notes
